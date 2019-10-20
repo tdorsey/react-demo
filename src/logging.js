@@ -7,6 +7,9 @@ const debug = require('debug');
 const pinoDebug = require('pino-debug')
 const logName = 'react-demo';
 
+
+export const { levels } = ["trace", "debug", "info", "log", "warn", "error"];
+
 const overrideLogging = () => {
 
   for ( let level in levels) { 
@@ -30,16 +33,6 @@ const loggerFactory = () => {
 
 
 const logger = loggerFactory();
-
-pinoDebug(logger, {
-  auto: true, // default
-  map: {
-    'react-demo:*': 'trace',
-    'react-demo-lib:*': 'warn',
-  },
-  skip: [
-    'some-other-thing' ]
-});
 
 var debugLogger = require('debug')(logName);
 
@@ -69,8 +62,5 @@ if (env.name !== 'production') {
 	enableDebug();
 	overrideLogging(true);
 }
-
-export const { levels } = ["trace", "debug", "info", "log", "warn", "error"];
-
 
 export default levels 
