@@ -1,4 +1,6 @@
-import { env } from "./environment"
+import  getEnvironment  from "./environments"
+
+const env = getEnvironment();
 
 const pino = require('pino')
 const debug = require('debug');
