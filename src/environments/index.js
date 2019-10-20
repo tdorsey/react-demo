@@ -1,18 +1,21 @@
-export { default as development } from "./development.json"  
-export { default as production } from "./production.json"
+import { default as developmentEnvironment } from "./development"
+import { default as productionEnvironment } from "./production" 
+
+export { developmentEnvironment as development }
+export { productionEnvironment as production } 
 
 
 let developmentRegex = new RegExp(/.*dev$/);
-export const
-    getEnvironment = (theString) => { 
+  export default function getEnvironment(theString)  { 
 
 
     if (!theString) {
         theString = window.location.host
     }
     if (theString.match(developmentRegex)) {
-        return development
+        return developmentEnvironment
     }
-    return production
+    return productionEnvironment
     
-}
+  }
+    
