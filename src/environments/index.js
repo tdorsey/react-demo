@@ -5,7 +5,7 @@ export { developmentEnvironment as development }
 export { productionEnvironment as production } 
 
 
-let developmentRegex = new RegExp(/.*dev$/);
+let developmentRegex = new RegExp(/.*dev.*$/);
   export default function getEnvironment(theString)  { 
 
 
