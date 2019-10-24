@@ -13,7 +13,7 @@
   "release": {
     "branch": "master",
     "ci": false,
-    "dryRun": true
+    "dryRun": false
   },
   "scripts": {
     "start": "react-scripts start",
