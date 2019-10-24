@@ -1,1 +1,6 @@
-{ "name": "development", "logLevel" : "debug", "debug" : true}
+{
+  "name": "development",
+  "logLevel": "debug",
+  "debug": true,
+  "host": "https://react-dev.rtd3.me"
+}
