@@ -2,7 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Fab from '@material-ui/core/Fab';
 import Compare from '@material-ui/icons/Compare';
-import Tooltip from '@material-ui/core/Tooltip';
+import WithTooltip from "../Tooltip/WithTooltip"
 
 const useStyles = makeStyles(theme => ({
   fab: {
@@ -15,17 +15,17 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-
 export default function EnvironmentButton(props) {
   const classes = useStyles();
+  const tooltip = { title: `Switch to ${props.environment}`,  "aria-label": "switch" }
+  const fab = <Fab color="primary" className={classes.fab}> <Compare /> </Fab> 
+
+const FabTooltip = WithTooltip(fab);
+
 
   return (
-    <div>
-      <Tooltip title={`Switch to ${props.environment}`} aria-label="add">
-        <Fab color="primary" className={classes.fab}>
-          <Compare />
-        </Fab>
-      </Tooltip>
+    <div> 
+        <FabTooltip color="primary" tooltip={tooltip} className={classes.fab} />
     </div>
   );
 }
