@@ -1,4 +1,5 @@
 import React from "react";
+import EnvironmentButton from "./SwitchEnvironment"
 export function EnvironmentDisplay(props) {
   const list = Object.keys(props.environment);
   return (
@@ -13,6 +14,7 @@ export function EnvironmentDisplay(props) {
           </div>
         ))}
       </ul>
+      <EnvironmentButton environment={props.environment.name} />
     </div>
   );
 }
