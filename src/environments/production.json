@@ -1,1 +1,6 @@
-{ "name": "production", "logLevel" : "warn", "debug" : false, "host": "https://react.rtd3.me" }
+{
+  "name": "production",
+  "logLevel": "warn",
+  "debug": false,
+  "host": "https://react.rtd3.me"
+}
